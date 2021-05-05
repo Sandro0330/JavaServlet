@@ -1,4 +1,4 @@
-package br.gerenciador.servlet;
+package br.gerenciador.modelo;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -13,7 +13,7 @@ public class Banco {
 	static {
 		Empresa empresa = new Empresa();
 		empresa.setId(chaveSequencial++);
-		empresa.setNome("Goole");
+		empresa.setNome("Google");
 		
 		Empresa empresa2 = new Empresa();
 		empresa2.setId(chaveSequencial++);

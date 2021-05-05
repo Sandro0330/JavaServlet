@@ -1,4 +1,4 @@
-package br.gerenciador.servlet;
+ package br.gerenciador.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(urlPatterns = "/oi")
 public class OlaMundo extends HttpServlet{
-
+ 
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws IOException{
 		
