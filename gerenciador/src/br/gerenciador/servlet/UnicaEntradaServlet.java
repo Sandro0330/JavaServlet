@@ -37,7 +37,7 @@ public class UnicaEntradaServlet extends HttpServlet {
 		String nome;
 		
 		try {
-			Class<?> classe = Class.forName(nomeDaClasse);// carrega a classe com o nome
+			Class classe = Class.forName(nomeDaClasse);// carrega a classe com o nome
 			Acao acao = (Acao) classe.newInstance();
 			nome = acao.executa(request, response);
 		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {

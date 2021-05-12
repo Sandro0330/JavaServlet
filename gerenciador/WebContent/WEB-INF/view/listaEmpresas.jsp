@@ -11,6 +11,8 @@
 <title>Lista de empresas cadastradas</title>
 </head>
 <body>
+	<c:import url="logout-parcial.jsp"></c:import>
+	
 	
 	Usuario Logado: ${usuarioLogado.login}
 
