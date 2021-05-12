@@ -15,11 +15,6 @@ public class ListaEmpresas implements Acao {
 
 	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		HttpSession session = request.getSession();
-		if(session.getAttribute("usuarioLogado") == null) {
-			return "redirect:entrada?acao=LoginForm";
-		}
-		
 		System.out.println("listando empresa");
 		
 		Banco banco = new Banco();
