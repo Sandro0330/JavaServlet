@@ -10,6 +10,7 @@ import br.com.spring.data.repository.CargoRepository;
 @Service
 public class CrudCargosServices {
 
+	private Boolean system = true;
 	private final CargoRepository cargoRepository;
 
 	public CrudCargosServices(CargoRepository cargoRepository) {
@@ -17,7 +18,26 @@ public class CrudCargosServices {
 	}
 	
 	public void inicial(Scanner input) {
-		salvar(input);
+		while(system) {
+			System.out.println("Qual a opção deseja executar ?");
+			System.out.println("0 - Sair");
+			System.out.println("1 - Salvar");
+			System.out.println("2 - Atualizar");
+			
+			int action = input.nextInt();
+			
+			switch (action) {
+			case 1:
+				 salvar(input);
+				 break;
+			case 2:
+				atualizar(input);
+				break;
+			default:
+				system = false;
+				break;
+			}
+		}
 	}
 	
 	private void salvar(Scanner input) {
@@ -28,5 +48,19 @@ public class CrudCargosServices {
 		cargoRepository.save(cargo);
 		System.out.println("Salvo com sucesso !");
 	}
+	
+	private void atualizar(Scanner input) {
+		System.out.println("Id");
+		long id = (Integer) input.nextInt();
+		System.out.println("Descrição do Cargo");
+		String descricao = input.next();
+		
+		Cargo cargo = new Cargo();
+		cargo.setId(id);
+		cargo.setDescricao(descricao);
+		cargoRepository.save(cargo);
+		System.out.println("Cargo atualizado com sucesso ! ");
+	}
+	
 	
 }
